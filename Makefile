@@ -28,5 +28,9 @@ priv/encoder_nif.so: c_src/encoder.c c_src/encoder_nif.c exip-0.5.4/bin/lib/libe
 	@mkdir -p priv
 	cc -o $@ $^ $(CFLAGS)
 
+clean:
+	rm priv/*
+	rebar clean
+
 run:
 	erl -pa $(PWD)/ebin/

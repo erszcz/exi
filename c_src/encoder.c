@@ -165,7 +165,7 @@ errorCode encode_attribute(char* name) {
 	return serialize.attribute(&testStrm, qname, TRUE, &valueType);
 }
 
-errorCode encode_attribute_with_string(char* name, char* uri) {
+errorCode encode_attribute_with_uri(char* name, char* uri) {
 	String local_name;
 	asciiToString(name, &local_name, &testStrm.memList, FALSE);
 	String elem_uri;

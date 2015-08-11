@@ -37,7 +37,7 @@ errorCode encode_start_element(char* name);
 errorCode encode_start_element_with_uri(char* name, char* uri);
 errorCode encode_self_contained();
 errorCode encode_attribute(char* name);
-errorCode encode_attribute_with_string(char* name, char* uri);
+errorCode encode_attribute_with_uri(char* name, char* uri);
 errorCode encode_value(char* value);
 errorCode encode_end_element();
 errorCode encode_end_document();

@@ -97,7 +97,7 @@ static ERL_NIF_TERM set_bit_packed_alignment_nif(ErlNifEnv* env, int argc, const
 static ERL_NIF_TERM set_byte_alignment_nif(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[]) {
   if(argc != 0)
     return enif_make_badarg(env);
-  byte_alignment_cookie();
+  set_byte_alignment();
   return enif_make_atom(env, "ok");
 }
 
@@ -153,7 +153,7 @@ static ERL_NIF_TERM set_preserved_dtd_nif(ErlNifEnv* env, int argc, const ERL_NI
 static ERL_NIF_TERM set_preserved_prefixes_nif(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[]) {
   if(argc != 0)
     return enif_make_badarg(env);
-  set_preserved_prefxes();
+  set_preserved_prefixes();
   return enif_make_atom(env, "ok");
 }
 
