@@ -8,3 +8,5 @@ ebin
 rel/example_project
 .concrete/DEV_MODE
 .rebar
+exip-0.5.4
+exip-0.5.4.tar.gz
