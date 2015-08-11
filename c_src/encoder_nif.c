@@ -1,6 +1,7 @@
 #include "erl_nif.h"
 
-#include "encodeTestExi.h"
+//#include "encodeTestExi.h"
+#include "encoder_nif.h"
 
 #define MAX_STRING_SIZE 2048
 
@@ -315,9 +316,9 @@ static ERL_NIF_TERM encode_end_document_nif(ErlNifEnv* env, int argc, const ERL_
 }
 
 static ErlNifFunc nif_funcs[] = {
-    {"init_buffer",                   0, init_buffer_nif_nif},
+    {"init_buffer",                   0, init_buffer_nif},
     {"init_stream",                   0, init_stream_nif},
-    {"serialize_header",              0, serialuze_header_nif},
+    {"serialize_header",              0, serialize_header_nif},
     {"close_stream",                  0, close_stream_nif},
     {"init_exi_header",               0, init_exi_header_nif},
     {"set_cookie",                    0, set_cookie_nif},

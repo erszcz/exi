@@ -12,6 +12,7 @@ String ln;
 QName qname = {&uri, &ln, NULL};
 char buf[OUTPUT_BUFFER_SIZE];
 BinaryBuffer buffer;
+EXITypeClass valueType;
 
 
 void init_buffer() {

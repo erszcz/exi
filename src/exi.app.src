@@ -1,0 +1,12 @@
+{application, exi,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { exi_app, []}},
+  {env, []}
+ ]}.

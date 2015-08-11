@@ -1,10 +1,13 @@
--author("Piotr Ociepka").
 -module(encoder).
+-author("Piotr Ociepka").
 -export([encode_exi/1]).
 -on_load(init/0).
+-compile(export_all).
 
 init() ->
-    ok = erlang:load_nif("./encoder_nif", 0).
+    Priv = code:priv_dir(exi),
+    Nif = filename:join(Priv, "encoder_nif"),
+    ok = erlang:load_nif(Nif, 0).
 
 encode_exi([]) -> [];
 encode_exi([{sd} | T]) ->

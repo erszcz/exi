@@ -1,6 +1,7 @@
 .eunit
 deps
 *.o
+*.d
 *.beam
 *.plt
 erl_crash.dump
@@ -10,3 +11,4 @@ rel/example_project
 .rebar
 exip-0.5.4
 exip-0.5.4.tar.gz
+*.so
