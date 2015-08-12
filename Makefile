@@ -2,6 +2,7 @@ INCLUDE_FILES=$(shell escript tools/get_included_files_h.erl)
 CFLAGS_LINUX = -shared
 CFLAGS_DARWIN = -undefined dynamic_lookup
 CFLAGS_REST = -I exip-0.5.4/bin/headers -L exip-0.5.4/bin/lib -lexip -fPIC
+REBAR ?= rebar
 
 ifeq ($(shell uname), Darwin)
 	CFLAGS = $(CFLAGS_DARWIN) $(INCLUDE_FILES) $(CFLAGS_REST)
@@ -22,7 +23,7 @@ exip-0.5.4/bin/lib/libexip.a: exip-0.5.4
 	cd $</build/gcc; make dynlib
 
 compile: priv/encoder_nif.so
-	rebar compile
+	$(REBAR) compile
 
 priv/encoder_nif.so: c_src/encoder.c c_src/encoder_nif.c exip-0.5.4/bin/lib/libexip.a
 	@mkdir -p priv
@@ -30,7 +31,7 @@ priv/encoder_nif.so: c_src/encoder.c c_src/encoder_nif.c exip-0.5.4/bin/lib/libe
 
 clean:
 	rm priv/*
-	rebar clean
+	$(REBAR) clean
 
 run:
 	erl -pa $(PWD)/ebin/
