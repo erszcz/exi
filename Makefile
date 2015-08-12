@@ -1,7 +1,7 @@
 INCLUDE_FILES=$(shell escript tools/get_included_files_h.erl)
 CFLAGS_LINUX = -shared
 CFLAGS_DARWIN = -undefined dynamic_lookup
-CFLAGS_REST = -Iexip-0.5.4/bin/headers -l:exip-0.5.4/bin/lib/libexip.a -fPIC
+CFLAGS_REST = -I exip-0.5.4/bin/headers -L exip-0.5.4/bin/lib -lexip -fPIC
 
 ifeq ($(shell uname), Darwin)
 	CFLAGS = $(CFLAGS_DARWIN) $(INCLUDE_FILES) $(CFLAGS_REST)
