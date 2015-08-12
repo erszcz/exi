@@ -30,7 +30,7 @@ priv/encoder_nif.so: c_src/encoder.c c_src/encoder_nif.c exip-0.5.4/bin/lib/libe
 	cc -o $@ $^ $(CFLAGS)
 
 clean:
-	rm priv/*
+	-rm priv/*
 	$(REBAR) clean
 
 run:
